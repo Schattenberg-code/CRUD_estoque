@@ -16,7 +16,7 @@ if(!$nome){
 
 $sql = "INSERT INTO Produtos (nome, categoria, descricao, preco, quantidade, dataValidade) VALUES (?,?,?,?,?,?)";
 
-$stmt = $conn->prepare($sql);
+$stmt = $conexao->prepare($sql);
 $stmt->bind_param("sssDii", $nome, $categoria, $descricao, $preco, $quantidade, $dataValidade);
 $stmt->execute();
 

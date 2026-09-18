@@ -5,8 +5,8 @@ $user = "root";
 $password = "root";
 $db = "crud_estoque";
 
-$conn = new mysqli($host, $user, $password, $db);
+$conexao = new mysqli($host, $user, $password, $db, 6608);
 
-if ($conn->connect_error){
+if ($conexao->connect_error){
     die("Erro de conexão");
 }

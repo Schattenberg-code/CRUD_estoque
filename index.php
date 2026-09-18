@@ -1,3 +1,9 @@
+<?php
+
+include "infra/conexao.php";
+$produtos = mysqli_query($conexao, "SELECT * FROM livros");
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,11 +52,35 @@
         </div>
 
 
-
-        <H3>Produtos cadastrados</H3>
-        <?php
-        include("public/listarProduto.php");
-        ?>
+        <div>
+            <h2>Produtos cadastrados</h2>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Categoria</th>
+                    <th>Descrição</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
+                    <th>Data de Validade</th>
+                </tr>
+                <?php while ($produto = mysqli_fetch_assoc($produtos)) { ?>
+                    <tr>
+                        <td><?= $produto["id"] ?></td>
+                        <td><?= $produto["nome"] ?></td>
+                        <td><?= $produto["categoria"] ?></td>
+                        <td><?= $produto["descricao"] ?></td>
+                        <td><?= $produto["preco"] ?></td>
+                        <td><?= $produto["quantidade"] ?></td>
+                        <td><?= $produto["dataValidade"] ?></td>
+                        <td>
+                            <a href="public/editar.php?id=<?php echo $produto["id"] ?>">Editar</a>
+                            <a href="public/excluir.php?id=<?php echo $produto["id"] ?>">Excluir</a>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </table>
+        </div>
     </main>
 </body>
 

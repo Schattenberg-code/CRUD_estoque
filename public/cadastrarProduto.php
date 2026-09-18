@@ -4,7 +4,7 @@ include ("../infra/conexao.php");
 
 $nome = $_POST["nome"];
 $categoria = $_POST["categoria"];
-$descreicao = $_POST["descreicao"];
+$descricao = $_POST["descricao"];
 $preco = $_POST["preco"];
 $quantidade = $_POST["quantidade"];
 $dataValidade = $_POST["dataValidade"];
@@ -17,7 +17,7 @@ if(!$nome){
 $sql = "INSERT INTO Produtos (nome, categoria, descricao, preco, quantidade, dataValidade) VALUES (?,?,?,?,?,?)";
 
 $stmt = $conexao->prepare($sql);
-$stmt->bind_param("sssDii", $nome, $categoria, $descricao, $preco, $quantidade, $dataValidade);
+$stmt->bind_param("sssdii", $nome, $categoria, $descricao, $preco, $quantidade, $dataValidade);
 $stmt->execute();
 
-header("location: ../home.php");
+header("location: ../index.php");

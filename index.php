@@ -19,30 +19,30 @@ $produtos = mysqli_query($conexao, "SELECT * FROM produtos");
         <h3>Cadastro de produtos</h3>
 
         <div>
-            <form method="POST" name="cadastrarProduto">
+            <form action="public/cadastrarProduto.php" method="POST" name="cadastrarProduto">
                 <div>
                     <label for="nome">Nome:</label>
                     <input type="text" name="nome">
                 </div>
                 <div>
                     <label for="nome">Categoria:</label>
-                    <input type="text" name="nome">
+                    <input type="text" name="categoria">
                 </div>
                 <div>
                     <label for="nome">Descrição:</label>
-                    <input type="text" name="nome">
+                    <input type="text" name="descricao">
                 </div>
                 <div>
                     <label for="nome">Preço:</label>
-                    <input type="number" name="nome">
+                    <input type="number" name="preco">
                 </div>
                 <div>
                     <label for="nome">Quantidade:</label>
-                    <input type="number" name="nome">
+                    <input type="number" name="quantidade">
                 </div>
                 <div>
                     <label for="nome">Data de validade:</label>
-                    <input type="number" name="nome">
+                    <input type="number" name="dataValidade">
                 </div>
                 <br>
                 <div>

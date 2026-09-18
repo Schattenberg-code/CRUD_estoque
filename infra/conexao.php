@@ -2,7 +2,7 @@
 
 $host = "localhost";
 $user = "root";
-$password = "root";
+$password = "";
 $db = "crud_estoque";
 
 $conexao = new mysqli($host, $user, $password, $db, 6608);

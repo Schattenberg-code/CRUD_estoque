@@ -54,7 +54,7 @@ $produtos = mysqli_query($conexao, "SELECT * FROM produtos");
 
         <div>
             <h2>Produtos cadastrados</h2>
-            <table>
+            <table border=1>
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
@@ -63,6 +63,7 @@ $produtos = mysqli_query($conexao, "SELECT * FROM produtos");
                     <th>Preço</th>
                     <th>Quantidade</th>
                     <th>Data de Validade</th>
+                    <th>Opções</th>
                 </tr>
                 <?php while ($produto = mysqli_fetch_assoc($produtos)) { ?>
                     <tr>

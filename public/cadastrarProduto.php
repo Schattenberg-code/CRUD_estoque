@@ -2,6 +2,11 @@
 
 include ("../infra/conexao.php");
 
+if ($_SERVER['REQUEST_METHOD'] != "POST") {
+    header("Location: ../index.php");
+    exit;
+}
+
 $nome = $_POST["nome"];
 $categoria = $_POST["categoria"];
 $descricao = $_POST["descricao"];

@@ -75,8 +75,14 @@ $produtos = mysqli_query($conexao, "SELECT * FROM produtos");
                         <td><?= $produto["quantidade"] ?></td>
                         <td><?= $produto["dataValidade"] ?></td>
                         <td>
-                            <a href="public/editar.php?id=<?php echo $produto["id"] ?>">Editar</a>
-                            <a href="public/excluir.php?id=<?php echo $produto["id"] ?>">Excluir</a>
+                            <form action="public/excluir.php" method="POST">
+                                <input type="hidden" name="id" value="<?= $produto['id'] ?>">
+                                <button type="submit">Excluir</button>
+                            </form>
+                            <form action="public/editar.php" method="POST">
+                                <input type="hidden" name="id" value="<?= $produto['id'] ?>">
+                                <button type="submit">Editar</button>
+                            </form>
                         </td>
                     </tr>
                 <?php } ?>

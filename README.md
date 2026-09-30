@@ -60,3 +60,18 @@ O sistema utiliza a tabela `produtos` com os seguintes campos:
 - Armazenamento dos dados no MySQL
 
 O sistema permite cadastrar, visualizar, editar e excluir produtos. Os dados são armazenados no banco de dados MySQL e podem ser gerenciados através da interface do sistema.
+
+## Diagrama de Caso de Uso
+
+![Diagrama de Caso de Uso](docs/diagrama-caso-de-uso.png)
+
+### Ator
+
+- **Usuário:** realiza as operações de cadastro, visualização, edição e exclusão de produtos.
+
+### Principais ações
+
+- **Cadastrar produto:** permite inserir um novo produto.
+- **Visualizar produtos:** exibe os produtos cadastrados.
+- **Editar produto:** permite alterar os dados de um produto.
+- **Excluir produto:** remove um produto do sistema.

@@ -31,48 +31,81 @@ $produto = $resultado->fetch_assoc();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>creud_estoque</title>
+    <link rel="stylesheet" href="../style/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
     <main>
-        <h3>Editando produto: <?php echo $produto["nome"] ?> </h3>
+<div id="editar"
+    class="container-sm shadow-lg p-5 bg-body-tertiary rounded rounded-3">
 
-        <div>
             <form action="atualizar.php" method="POST" name="cadastrarProduto">
 
-             <input type="hidden" name="id" value="<?php echo $produto["id"] ?>">
+                <input type="hidden" name="id" value="<?php echo $produto["id"] ?>">
+
+                <p class="h2 pb-3 d-flex justify-content-center">Editando produto <?php echo $produto["nome"] ?> </p>
+
                 <div>
-                    <label for="nome">Nome:</label>
-                    <input type="text" name="nome" value="<?php echo $produto["nome"] ?>">
+                    <label class="form-label" for="nome">Nome:</label>
+                    <br>
+                    <input class="form-control" type="text" name="nome" id="nome"
+                        value="<?php echo $produto["nome"] ?>">
                 </div>
+
                 <div>
-                    <label for="nome">Categoria:</label>
-                    <input type="text" name="categoria" value="<?php echo $produto["categoria"] ?>">
+                    <label class="form-label" for="categoria">Categoria:</label>
+                    <br>
+                    <input class="form-control" type="text" name="categoria" id="categoria"
+                        value="<?php echo $produto["categoria"] ?>">
                 </div>
+
                 <div>
-                    <label for="nome">Descrição:</label>
-                    <input type="text" name="descricao" value="<?php echo $produto["descricao"] ?>">
+                    <label class="form-label" for="descricao">Descrição:</label>
+                    <br>
+                    <input class="form-control" type="text" name="descricao" id="descricao"
+                        value="<?php echo $produto["descricao"] ?>">
                 </div>
+
                 <div>
-                    <label for="nome">Preço:</label>
-                    <input type="number" name="preco" value="<?php echo $produto["preco"] ?>">
+                    <label class="form-label" for="preco">Preço:</label>
+                    <br>
+                    <input class="form-control" type="number" name="preco" id="preco"
+                        value="<?php echo $produto["preco"] ?>">
                 </div>
+
                 <div>
-                    <label for="nome">Quantidade:</label>
-                    <input type="number" name="quantidade" value="<?php echo $produto["quantidade"] ?>">
+                    <label class="form-label" for="quantidade">Quantidade:</label>
+                    <br>
+                    <input class="form-control" type="number" name="quantidade" id="quantidade"
+                        value="<?php echo $produto["quantidade"] ?>">
                 </div>
+
                 <div>
-                    <label for="nome">Data de validade:</label>
-                    <input type="number" name="dataValidade" value="<?php echo $produto["dataValidade"] ?>">
+                    <label class="form-label" for="data">Data de validade:</label>
+                    <br>
+                    <input class="form-control" type="date" name="dataValidade" id="data"
+                        value="<?php echo $produto["dataValidade"] ?>">
                 </div>
-                <br>
-                <div>
-                    <button name="cadastrarProduto" type="submit">Enviar</button>
+
+                <div class="d-grid gap-2 mt-3">
+                    <button id="botao" class=" btn btn-primary" name="editarproduto" type="submit">
+                        Enviar
+                    </button>
+                    <br>
+                    <a href="../index.php" id="botao" class=" btn btn-danger">
+                        Voltar
+                    </a>
                 </div>
+
             </form>
         </div>
 
     </main>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
 
 </html>

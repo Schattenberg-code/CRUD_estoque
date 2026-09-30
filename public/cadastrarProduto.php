@@ -14,7 +14,7 @@ $preco = $_POST["preco"];
 $quantidade = $_POST["quantidade"];
 $dataValidade = $_POST["dataValidade"];
 
-if(!$nome){
+if (!$nome || !$categoria || !$descricao || !$preco || !$quantidade || !$dataValidade) {
     header("location: ../index.php");
     die("erro");
 }
@@ -22,7 +22,7 @@ if(!$nome){
 $sql = "INSERT INTO Produtos (nome, categoria, descricao, preco, quantidade, dataValidade) VALUES (?,?,?,?,?,?)";
 
 $stmt = $conexao->prepare($sql);
-$stmt->bind_param("sssdii", $nome, $categoria, $descricao, $preco, $quantidade, $dataValidade);
+$stmt->bind_param("sssdis", $nome, $categoria, $descricao, $preco, $quantidade, $dataValidade);
 $stmt->execute();
 
 header("location: ../index.php");

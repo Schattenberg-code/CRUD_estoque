@@ -1,0 +1,50 @@
+td, th {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+}
+
+#editar {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 25% !important;
+    height: 740px !important;
+}
+
+#divPrincipal {
+    left: 24% !important;
+    position: absolute !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    height: 740px !important;
+}
+
+#botao{
+    margin-top: 2px !important;
+}
+
+#secaoum {
+    position: absolute !important;
+    left: 66% !important;
+    top: 50% !important; 
+    transform: translate(-50%, -50%) !important;
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+}
+
+#divSegundaria {
+    margin: 0px !important;
+    height: 550px !important;
+    overflow-y: auto !important;
+}
+
+#botaoAtualizar{
+    margin-top: 5px;
+}
+
+#tabelaPratos{
+    border-radius: 10px !important;
+}
+
